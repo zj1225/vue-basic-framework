@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+html,body,table,th,td,tr,h1,h2,h3,h4,h5,h6,em,strong,b,font,i,address,span,form,legend,input,textarea,button,a,ul,ol,li,p,div,img,optgroup
+{
+    margin:0; 
+    padding:0; 
+}
+html{ min-height: 100%; }
+body{ font-size: 14px; font-family: "微软雅黑";  color:#333; background: #fff;  position:relative; overflow: hidden;  }
+/*阻止iphone端长按默认行为*/
+body.disable-default-action
+{
+    -webkit-touch-callout:none ;
+    -webkit-user-select:none ;
+}
+/*只允许Form表单域执行文本的剪切板操作，添加如下规则 */
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+}
+/**处理ios的iframe不能滚动的问题 iframe的父元素*/
+.ios_iframe_box_touch{
+    -webkit-overflow-scrolling: touch;
+    -webkit-overflow:auto; 
+}
+
+a,
+button,
+input
+{
+    
+    /* 1.去除android a/button/input标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
+    -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] 
+{
+    -webkit-appearance:none;
+    appearance:none;
+    outline:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    border-radius:0;
+}
+input[readonly=readonly]{border:solid #DCDFE6 1px; } 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{ color: #666; }
+input:-moz-placeholder, textarea:-moz-placeholder{ color: #666; }
+input::-moz-placeholder, textarea::-moz-placeholder{ color: #666; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder{ color: #666; }
+
+select{ display:inline-block; vertical-align:middle; border:solid #DCDFE6 1px; border-radius: 4px; color:#606266; padding:3px 20px 3px 3px; }
+select optgroup{ color:#333; font-size:14px; font-style:normal; font-family:"微软雅黑"; display:block; padding:0 10px; }
+select option { color:#606266; font-size:14px; font-family:"微软雅黑"; }
+input,select,textarea{display:inline-block; border:solid #DCDFE6 1px; border-radius: 4px; resize:none;}
+
+table{border-collapse:collapse; border-spacing:0; display: table; min-width: 100%;}
+em,font,i,address{font-style:normal; font-size:12px;}
+
+li{list-style:none;}
+form,legend{ border:0;}
+
+img{
+    display:block; border:0;
+    max-width: 100%;
+    height: auto;
+}
+a{ color:#666; outline: none; text-decoration:none; cursor:pointer;}
+a:hover{color:#000; outline: none; text-decoration:none;}
+
+.cf:before , .cf:after{content:""; display:table;}
+.cf:after {clear:both;}
+.cf {zoom:1;}
+
+.d-main{ position: relative; }
